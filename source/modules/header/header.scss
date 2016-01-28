@@ -1,0 +1,26 @@
+.header {
+  width: 100%;
+  position: absolute;
+  z-index: 20;
+  background-color: #222;
+  color: #fff;
+  &__name {
+    float: left;
+    padding: 15px;
+    font-size: 18px;
+    line-height: 20px;
+    height: 50px;
+    box-sizing: border-box;
+  }
+  &__login {
+    float: right;
+    color: #999;
+    text-decoration: none;
+    padding: 15px 0 15px 30px;
+    background: url(img/header__login.svg) 0 50% no-repeat;
+    background-size: 30px;
+    &:hover {
+      color: #fff;
+    }
+  }
+}

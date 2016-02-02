@@ -69,7 +69,6 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(true),
-        new CopyWebpackPlugin([ { from: 'src/assets', to: 'assets' } ]),
         new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js', minChunks: Infinity }),
         new ExtractTextPlugin(settings.bundleCSS),
         new webpack.ProvidePlugin({

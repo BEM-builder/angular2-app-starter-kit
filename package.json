@@ -3,6 +3,11 @@
   "version": "3.0.0",
   "description": "Module bundler",
   "scripts": {
+    "fix:ng2-clean": "node_modules/.bin/rimraf node_modules/angular2/manual_typings node_modules/angular2/typings node_modules/angular2/bundles/typings",
+    "fix:ng2": "npm run fix:ng2-clean",
+    "pretypings-install": "npm run fix:ng2",
+    "typings-install": "typings install",
+    "postinstall": "npm run typings-install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server"
   },

@@ -5,28 +5,7 @@ import {HomeComponent} from './../homepage/homepage.component'
 @Component({
     selector: 'firstpage',
     pipes: [Conversion],
-    template:
-        `
-            <div class="playerContainer">о
-                <home-component></home-component>
-                <video id="player" src="http://1cdp.look1.ru/trailer/e9350309-194b-4e0d-b967-ccd4647baeb4.mp4" volume="0.3" width="800" height="450"></video>
-                <div class="controls">
-                    <button id="playpause" class="control btn btn-success" (click)="playbackToggle()">
-                        Play
-                    </button>
-                    <div id="progressbar">
-                        <div id="progressindicator" [style.width.%]="getCurrentPercentage()"></div>
-                    </div>
-                    <button id="fullscreen" class="control btn btn-success" (click)="requestFullScreen()">
-                        Full
-                    </button>
-                    <span id="durationTime">{{getDuration() | convertToFullTime}}</span>
-                    <span class="divider"> / </span>
-                    <span id="currentTime">{{getCurrentTime() | convertToFullTime}}</span>
-                </div>
-            </div>
-            <div id="log" class="playerlog" (click)="stopScrolling()">Click to stop scrolling!<br/></div>
-        `
+    template: require('./firstpage.template.html')
 })
 
 export class FirstPageComponent {

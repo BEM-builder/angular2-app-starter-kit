@@ -60,10 +60,10 @@ module.exports = {
       // instrument only testing sources with Istanbul
       {
         test: /\.(js|ts)$/,
-        include: root('src'),
+        include: root('source'),
         loader: 'istanbul-instrumenter-loader',
         exclude: [
-          /\.e2e\.ts$/,
+          /\.(e2e|spec)\.ts$/,
           /node_modules/
         ]
       }
@@ -93,7 +93,7 @@ module.exports = {
       'Reflect': 'es7-reflect-metadata/src/global/browser'
     })
   ],
-    // we need this due to problems with es6-shim
+  // we need this due to problems with es6-shim
   node: {
     global: 'window',
     progress: false,

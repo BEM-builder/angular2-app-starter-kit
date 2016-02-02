@@ -21,7 +21,7 @@ module.exports = function(config) {
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: { 'spec-bundle.js': ['webpack', 'sourcemap'] },
+    preprocessors: { 'spec-bundle.js': ['coverage', 'webpack', 'sourcemap'] },
 
     // Webpack Config at ./webpack.test.config.js
     webpack: testWebpackConfig,
@@ -30,8 +30,9 @@ module.exports = function(config) {
       dir : 'coverage/',
       reporters: [
         { type: 'text-summary' },
+        { type: 'json' },
         { type: 'html' }
-      ],
+      ]
     },
 
     // Webpack please don't spam the console when running in karma!
@@ -57,7 +58,10 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: [ 'PhantomJS' ],
+    browsers: [
+      // 'Chrome',
+      'PhantomJS'
+    ],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits

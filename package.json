@@ -3,6 +3,11 @@
   "version": "3.0.0",
   "description": "Module bundler",
   "scripts": {
+    "webdriver:update": "webdriver-manager update",
+    "webdriver:start": "webdriver-manager start",
+    "pree2e": "npm run webdriver:update -- --standalone",
+    "e2e": "ts-node node_modules/.bin/protractor --specs test/**/**.e2e.ts,test/**/*.e2e.ts",
+    "e2e:live": "protractor --elementExplorer",
     "fix:ng2-clean": "node_modules/.bin/rimraf node_modules/angular2/manual_typings node_modules/angular2/typings node_modules/angular2/bundles/typings",
     "fix:ng2": "npm run fix:ng2-clean",
     "pretypings-install": "npm run fix:ng2",

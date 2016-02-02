@@ -1,5 +1,7 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require('path');
 var webpack = require('webpack');
+var CopyWebpackPlugin  = require('copy-webpack-plugin');
 var NODE_ENV = process.env.NODE_ENV || 'development';
 
 var settings = {
@@ -15,47 +17,45 @@ var settings = {
 
 module.exports = {
     context: __dirname + settings.context,
-    entry: settings.app,
+    entry: { 'vendor': './vendor.ts', 'main': './main.ts' },
     output: {
         path: __dirname + settings.path,
         publicPath: settings.publicPath,
-        filename: settings.bundleApp,
+        filename: '[name].bundle.js',
+        sourceMapFilename: '[name].map',
         chunkFilename: settings.chunks
     },
     watch: NODE_ENV == 'development',
     resolve: {
         modulesDirectories: ['node_modules']
     },
+    debug: true,
     devtool: NODE_ENV == 'development' ? "inline-source-map" : null,
+    resolve: {
+        // ensure loader extensions match
+        extensions: ['','.ts','.js','.json','.css','.html']
+    },
     module: {
+        preLoaders: [{ test: /\.ts$/, loader: 'tslint-loader', exclude: [/node_modules/] }],
         loaders: [
             {
-                test: /\.js/,
-                loader: 'babel',
-                exclude: /(node_modules|bower_components)/
+                test: /\.ts$/,
+                loader: 'ts-loader',
+                exclude: [ /\.(spec|e2e)\.ts$/, /node_modules\/(?!(ng2-.+))/ ]
             },
-            {
-                test:   /\.css$/,
-                loader: ExtractTextPlugin.extract(
-                    'style!css!autoprefixer?browsers=last 15 versions'
-                )
-            },
+            // Support for *.json files.
+            { test: /\.json$/,  loader: 'json-loader' },
+
+            // Support for CSS as raw text
+            { test: /\.css$/,   loader: 'raw-loader' },
+
+            // support for .html as raw text
+            { test: /\.html$/,  loader: 'raw-loader' },
             {
                 test:   /\.(sass|scss)$/,
                 loader: ExtractTextPlugin.extract(
                     'css?sourceMap!autoprefixer?browsers=last 15 versions!sass?sourceMap'
                 )
-            },
-            {
-                test: /\.less$/,
-                loader: ExtractTextPlugin.extract(
-                    'css?sourceMap!autoprefixer?browsers=last 15 versions!less?sourceMap'
-                )
-            },
-            {
-                test: /\.hbs/,
-                loader: 'handlebars-loader',
-                exclude: /(node_modules|bower_components)/
             },
             {
                 test:   /\.(png|jpg|svg)$/,
@@ -68,6 +68,9 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.optimize.OccurenceOrderPlugin(true),
+        new CopyWebpackPlugin([ { from: 'src/assets', to: 'assets' } ]),
+        new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js', minChunks: Infinity }),
         new ExtractTextPlugin(settings.bundleCSS),
         new webpack.ProvidePlugin({
             $: 'jquery',
@@ -75,6 +78,10 @@ module.exports = {
             'window.jQuery': 'jquery'
         })
     ],
+    tslint: {
+        emitErrors: false,
+        failOnHint: false
+    },
     devServer: {
         contentBase: settings.contentBase
     }
@@ -89,4 +96,13 @@ if (NODE_ENV == 'production') {
             }
         })
     );
+}
+function root(args) {
+    args = Array.prototype.slice.call(arguments, 0);
+    return path.join.apply(path, [__dirname].concat(args));
+}
+
+function rootNode(args) {
+    args = Array.prototype.slice.call(arguments, 0);
+    return root.apply(path, ['node_modules'].concat(args));
 }

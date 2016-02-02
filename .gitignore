@@ -4,5 +4,6 @@ public/css
 public/js
 public/img
 public/fonts
+public/*.bundle.js
 typings/
 coverage/

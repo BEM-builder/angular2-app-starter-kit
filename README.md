@@ -11,6 +11,12 @@ npm install --global webpack
 npm install
 ```
 
+Ставим typescript и ts-node
+```
+npm i -g typescript
+npm i -g ts-node
+```
+
 Запуск сборки:
 ==================
 ```

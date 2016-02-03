@@ -11,7 +11,8 @@ var settings = {
     bundleCSS: 'css/styles.css',
     chunks: 'js/chunks/[name].js',
     publicPath: NODE_ENV == 'development' ? '/' : '/webpack/public/',
-    contentBase: "./public"
+    contentBase: "./public",
+    port: 3000
 };
 
 module.exports = {
@@ -80,7 +81,8 @@ module.exports = {
         failOnHint: false
     },
     devServer: {
-        contentBase: settings.contentBase
+        contentBase: settings.contentBase,
+        port: settings.port
     }
 };
 if (NODE_ENV == 'production') {

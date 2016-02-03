@@ -1,7 +1,6 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 var webpack = require('webpack');
-var CopyWebpackPlugin  = require('copy-webpack-plugin');
 var NODE_ENV = process.env.NODE_ENV || 'development';
 
 var settings = {

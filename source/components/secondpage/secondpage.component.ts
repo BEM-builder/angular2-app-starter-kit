@@ -1,11 +1,13 @@
 import {Component} from 'angular2/core'
 import {NgForm} from 'angular2/common'
+import {HomeComponent} from '../homepage/homepage.component'
 
 @Component({
     selector: 'secondpage',
     template:
         `
             <div class="container">
+                <home-component></home-component>
                 <div class="form first">
                     <h1>First form</h1>
                     <form (ngSubmit)="onFirstFormSubmit()" #firstForm="ngForm">
@@ -50,7 +52,8 @@ import {NgForm} from 'angular2/common'
                 <b>Model:</b> {{getModel()}}<br/>
                 <b>Selectables:</b> {{getSelectables()}}
             </div>
-        `
+        `,
+    directives: [HomeComponent]
 })
 
 export class SecondPageComponent {

@@ -1,5 +1,5 @@
 import {Component, AfterViewInit} from 'angular2/core'
-import {Conversion} from './../../pipes/timepipe/timepipe.pipe'
+import {Conversion} from './../../../pipes/timepipe/timepipe.pipe'
 import {HomeComponent} from './../homepage/homepage.component'
 
 @Component({

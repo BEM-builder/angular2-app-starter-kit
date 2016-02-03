@@ -4,7 +4,7 @@ var webpack = require('webpack');
 var NODE_ENV = process.env.NODE_ENV || 'development';
 
 var settings = {
-    app: { 'vendor': './vendor.ts', 'main': './main.ts' },
+    app: { 'vendor': './build/vendor.ts', 'main': './build/main.ts' },
     context: '/source',
     path: '/public',
     bundleApp: '/js/[name].js',

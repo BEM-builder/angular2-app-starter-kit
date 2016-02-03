@@ -1,9 +1,10 @@
-<div class="wrapper">
-    <menu></menu>
+<div class="content">
+    <div class="wrapper" id="content-wrap">
+        <h1>Test app home page</h1>
+        <nav>
+            <a [routerLink]="['FirstPage']">Player page</a>
+            <a [routerLink]="['SecondPage']">Forms page</a>
+            <a [routerLink]="['HomePage']">HomePage</a>
+        </nav>
+    </div>
 </div>
-<h1>Test app home page</h1>
-<nav>
-    <a [routerLink]="['FirstPage']">Player page</a>
-    <a [routerLink]="['SecondPage']">Forms page</a>
-    <a [routerLink]="['HomePage']">HomePage</a>
-</nav>

@@ -1,5 +1,7 @@
 import {Component, provide} from 'angular2/core';
 
+import {Header} from './../modules/header/header'
+
 import {HomeComponent} from './pages/homepage/homepage.component';
 import {FirstPageComponent} from './pages/firstpage/firstpage.component';
 import {SecondPageComponent} from './pages/secondpage/secondpage.component';
@@ -17,10 +19,11 @@ import {
   selector: 'app',
   template: `
     <div>
+        <header></header>
       <router-outlet></router-outlet>
     </div>
   `,
-  directives: ROUTER_DIRECTIVES
+  directives: [ROUTER_DIRECTIVES, Header]
 })
 
 @RouteConfig([

@@ -1,10 +1,17 @@
-import {Component, provide} from 'angular2/core'
+import {Component, provide} from 'angular2/core';
 
-import {HomeComponent} from './../components/homepage/homepage.component'
-import {FirstPageComponent} from './../components/firstpage/firstpage.component'
-import {SecondPageComponent} from './../components/secondpage/secondpage.component'
+import {HomeComponent} from './../components/homepage/homepage.component';
+import {FirstPageComponent} from './../components/firstpage/firstpage.component';
+import {SecondPageComponent} from './../components/secondpage/secondpage.component';
 
-import {Router, RouteConfig, RouteDefinition, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router'
+import {
+    Router,
+    RouteConfig,
+    RouteDefinition,
+    ROUTER_DIRECTIVES,
+    ROUTER_PROVIDERS,
+    LocationStrategy,
+    HashLocationStrategy} from 'angular2/router';
 
 @Component({
   selector: 'app',

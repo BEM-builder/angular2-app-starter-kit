@@ -5,7 +5,8 @@ import {HomeComponent} from './../homepage/homepage.component'
 @Component({
     selector: 'firstpage',
     pipes: [Conversion],
-    template: require('./firstpage.template.html')
+    template: require('./firstpage.template.html'),
+    directives: [HomeComponent]
 })
 
 export class FirstPageComponent {

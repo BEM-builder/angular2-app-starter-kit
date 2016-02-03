@@ -1,8 +1,8 @@
 import {Component, provide} from 'angular2/core';
 
-import {HomeComponent} from './../components/homepage/homepage.component';
-import {FirstPageComponent} from './../components/firstpage/firstpage.component';
-import {SecondPageComponent} from './../components/secondpage/secondpage.component';
+import {HomeComponent} from './pages/homepage/homepage.component';
+import {FirstPageComponent} from './pages/firstpage/firstpage.component';
+import {SecondPageComponent} from './pages/secondpage/secondpage.component';
 
 import {
     Router,

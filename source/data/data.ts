@@ -8,15 +8,18 @@ export class Data {
             login: "Авторизация"
         },
         menu: {
-            items: [{
-                text: "Webpack",
-                href: "#webpack"
-            }, {
-                text: "Babel",
-                href: "#babel"
-            }, {
-                text: "LESS",
-                href: "#less"
+            items: [
+            {
+                text: "Home",
+                href: "#/"
+            },
+            {
+                text: "Player Page",
+                href: "#/firstpage"
+            },
+            {
+                text: "Forms page",
+                href: "#/secondpage"
             }]
         },
         modal: {

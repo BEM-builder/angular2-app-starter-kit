@@ -5,9 +5,8 @@ import {HomeComponent} from '../homepage/homepage.component'
 @Component({
     selector: 'secondpage',
     template:
-        `
-            <div class="container">
-                <home-component></home-component>
+        `<div class="content">
+            <div class="wrapper" id="content-wrap">
                 <div class="form first">
                     <h1>First form</h1>
                     <form (ngSubmit)="onFirstFormSubmit()" #firstForm="ngForm">
@@ -51,7 +50,7 @@ import {HomeComponent} from '../homepage/homepage.component'
                 <b>Submitted from second form:</b> {{secondFormData}}<br/>
                 <b>Model:</b> {{getModel()}}<br/>
                 <b>Selectables:</b> {{getSelectables()}}
-            </div>
+</div></div>
         `,
     directives: [HomeComponent]
 })

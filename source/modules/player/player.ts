@@ -69,7 +69,7 @@ export class Player {
     }
 
     init(player: any, controls: any) {
-        var that = this;
+        let that = this;
 
         this.setPlayer(player);
         this.setControls(controls);
@@ -108,7 +108,7 @@ export class Player {
     }
 
      appendToLog(string: String, special: Boolean = false) {
-         var log = this.controls.log;
+         let log = this.controls.log;
          if (special) {
              log.innerHTML = log.innerHTML + '-----------------------------------------------' + '<br/>';
          }

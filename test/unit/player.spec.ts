@@ -1,4 +1,4 @@
-import {FirstPageComponent} from '../../source/app/pages/firstpage/firstpage.component'
+import {Player} from '../../source/modules/player/player'
 
 describe('player class tests', () => {
     class PlayerMock {
@@ -31,20 +31,20 @@ describe('player class tests', () => {
                 case 'canplay':
                     playerMock.duration = 5;
                     callback();
-                    expect(firstPageComponent.getDuration()).toBe(5);
+                    expect(Player.getDuration()).toBe(5);
                     break;
                 case 'timeupdate':
                     playerMock.currentTime = 1;
                     callback();
-                    expect(firstPageComponent.getCurrentTime()).toBe(1);
+                    expect(Player.getCurrentTime()).toBe(1);
                     break;
                 case 'ended':
                     callback();
                     expect(playerMock.paused).toBeTruthy();
                     expect(controls.playpause.innerHTML).toBe('Play');
-                    expect(firstPageComponent.getDuration()).toBe(0);
-                    expect(firstPageComponent.getCurrentTime()).toBe(0);
-                    expect(firstPageComponent.getCurrentPercentage()).toBe(0);
+                    expect(Player.getDuration()).toBe(0);
+                    expect(Player.getCurrentTime()).toBe(0);
+                    expect(Player.getCurrentPercentage()).toBe(0);
                     break;
             }
         }
@@ -59,7 +59,7 @@ describe('player class tests', () => {
         }
     };
 
-    var firstPageComponent = new FirstPageComponent();
+    var Player = new Player();
     var playerMock = new PlayerMock();
 
     beforeEach(() => {
@@ -67,15 +67,15 @@ describe('player class tests', () => {
     });
 
     it('should test first page default variable values', () => {
-        expect(firstPageComponent.getPlayer()).toBe(null);
-        expect(firstPageComponent.getControls()).toEqual(null);
-        expect(firstPageComponent.getCurrentPercentage()).toBe(0);
-        expect(firstPageComponent.getDuration()).toBe(0);
-        expect(firstPageComponent.getCurrentTime()).toBe(0);
+        expect(Player.getPlayer()).toBe(null);
+        expect(Player.getControls()).toEqual(null);
+        expect(Player.getCurrentPercentage()).toBe(0);
+        expect(Player.getDuration()).toBe(0);
+        expect(Player.getCurrentTime()).toBe(0);
     });
 
     it('should test player and controls initialization after component init', () => {
-        firstPageComponent.init(playerMock, controls);
-        expect(firstPageComponent.getPlayer().paused).toBeTruthy();
+        Player.init(playerMock, controls);
+        expect(Player.getPlayer().paused).toBeTruthy();
     })
 });

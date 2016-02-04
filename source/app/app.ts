@@ -3,7 +3,7 @@ import {Component, provide} from 'angular2/core';
 import {Header} from './../modules/header/header'
 
 import {HomeComponent} from './pages/homepage/homepage.component';
-import {FirstPageComponent} from './pages/firstpage/firstpage.component';
+//import {FirstPageComponent} from './pages/firstpage/firstpage.component';
 import {SecondPageComponent} from './pages/secondpage/secondpage.component';
 
 import {
@@ -29,7 +29,12 @@ import {
 
 @RouteConfig([
   {path: '/', name: 'HomePage', component: HomeComponent, useAsDefault: true},
-  {path: '/firstpage', name: 'FirstPage', component: FirstPageComponent},
+  //{path: '/firstpage', name: 'FirstPage', component: FirstPageComponent},
+  {
+    path: '/firstpage',
+    loader: () => require('./pages/firstpage/firstpage.component.async')('FirstPageComponent'),
+    name: 'FirstPage'
+  },
   {path: '/secondpage', name: 'SecondPage', component: SecondPageComponent}
 ])
 

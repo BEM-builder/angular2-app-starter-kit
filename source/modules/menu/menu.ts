@@ -7,7 +7,7 @@ import {Router, RouteConfig, RouterLink, ROUTER_DIRECTIVES} from 'angular2/route
     selector: 'menu',
     template: require('./menu.template.html'),
     styles: [ require('./menu.scss').toString()],
-    directives: [RouterLink]
+    directives: [RouterLink, ROUTER_DIRECTIVES]
     //providers: [Data]
 })
 
@@ -19,7 +19,7 @@ export class Menu {
         'HomePage'
     ];
     private data : any = new Data().getData();
-    constructor() {
+    constructor(public router: Router) {
 
     }
 }

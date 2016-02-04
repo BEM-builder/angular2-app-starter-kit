@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
-import {FirstPageComponent} from './../firstpage/firstpage.component';
+import {FirstPageComponent} from './../firstpage/firstpage.component.async';
 import {SecondPageComponent} from './../secondpage/secondpage.component';
 
 

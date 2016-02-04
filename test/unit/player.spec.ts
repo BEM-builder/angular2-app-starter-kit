@@ -1,4 +1,4 @@
-import {FirstPageComponent} from '../../source/app/pages/firstpage/firstpage.component'
+import {FirstPageComponent} from '../../source/app/pages/firstpage/firstpage.component.async'
 
 describe('player class tests', () => {
     class PlayerMock {

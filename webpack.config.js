@@ -40,6 +40,11 @@ module.exports = {
                 exclude: [ /\.(spec|e2e)\.ts$/, /node_modules\/(?!(ng2-.+))/ ]
             },
             {
+                test: /\.async\.ts$/,
+                loaders: ['es6-promise-loader', 'ts-loader'],
+                exclude: [ /\.(spec|e2e)\.ts$/ ]
+            },
+            {
                 test: /\.json$/,
                 loader: 'json-loader'
             },

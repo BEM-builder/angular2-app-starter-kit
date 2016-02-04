@@ -23,6 +23,7 @@ import {
       <router-outlet></router-outlet>
     </div>
   `,
+  styles: [ ".router-link-active {background-color: red;}"],
   directives: [ROUTER_DIRECTIVES, Header]
 })
 

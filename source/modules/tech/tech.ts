@@ -12,6 +12,6 @@ import {Data} from './../../data/data';
 export class Tech {
     private data: any = new Data().getData();
     constructor() {
-        console.log("this.data: ", this.data);
+
     }
 }

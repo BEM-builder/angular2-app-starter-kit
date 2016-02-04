@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core'
+import {Component, Input} from 'angular2/core'
 import {Menu} from './../menu/menu'
 
 @Component({

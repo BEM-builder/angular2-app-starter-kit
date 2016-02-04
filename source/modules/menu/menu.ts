@@ -1,6 +1,6 @@
 import {Data} from '../../data/data'
 
-import {Component} from 'angular2/core'
+import {Component, Input} from 'angular2/core'
 
 @Component({
     selector: 'menu',
@@ -10,8 +10,9 @@ import {Component} from 'angular2/core'
 })
 
 export class Menu {
+    @Input() modificator : string;
     private data : any = new Data().getData();
     constructor() {
-        console.log("data: ",this.data);
+
     }
 }

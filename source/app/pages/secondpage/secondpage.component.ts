@@ -1,6 +1,6 @@
-import {Component} from 'angular2/core'
-import {NgForm} from 'angular2/common'
-import {HomeComponent} from '../homepage/homepage.component'
+import {Component} from 'angular2/core';
+import {NgForm} from 'angular2/common';
+import {HomeComponent} from '../homepage/homepage.component';
 
 @Component({
     selector: 'secondpage',

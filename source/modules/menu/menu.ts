@@ -1,6 +1,6 @@
-import {Data} from '../../data/data'
+import {Data} from '../../data/data';
 
-import {Component, Input} from 'angular2/core'
+import {Component, Input} from 'angular2/core';
 import {Router, RouteConfig, RouterLink, ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({

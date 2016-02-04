@@ -2,10 +2,10 @@
   "rules": {
     "class-name": true,
     "curly": false,
-    "eofline": true,
+    "eofline": false,
     "indent": "spaces",
     "max-line-length": [
-      true,
+      false,
       100
     ],
     "member-ordering": [
@@ -32,10 +32,6 @@
       "check-catch",
       "check-else",
       "check-whitespace"
-    ],
-    "quotemark": [
-      true,
-      "single"
     ],
     "semicolon": true,
     "triple-equals": [

@@ -1,9 +1,8 @@
 import {Component, provide} from 'angular2/core';
 
-import {Header} from './../modules/header/header'
+import {Header} from './../modules/header/header';
 
 import {HomeComponent} from './pages/homepage/homepage.component';
-//import {FirstPageComponent} from './pages/firstpage/firstpage.component';
 import {SecondPageComponent} from './pages/secondpage/secondpage.component';
 
 import {

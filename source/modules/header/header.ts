@@ -1,5 +1,5 @@
-import {Component, Input} from 'angular2/core'
-import {Menu} from './../menu/menu'
+import {Component, Input} from 'angular2/core';
+import {Menu} from './../menu/menu';
 
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 

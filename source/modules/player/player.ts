@@ -1,6 +1,6 @@
-import {Component, AfterViewInit} from 'angular2/core'
+import {Component, AfterViewInit} from 'angular2/core';
 import {Router, RouteConfig, RouterLink, ROUTER_DIRECTIVES} from 'angular2/router';
-import {Conversion} from './pipes/timepipe/timepipe.pipe'
+import {Conversion} from './pipes/timepipe/timepipe.pipe';
 
 @Component({
     selector: 'player',
@@ -85,16 +85,16 @@ export class Player {
 
         this.getPlayer().addEventListener('canplay', function () {
             that.appendToLog('Canplay event fired, video ready', true);
-            that.setDuration(that.getPlayer().duration)
+            that.setDuration(that.getPlayer().duration);
         });
 
         this.getPlayer().addEventListener('durationchange', function () {
-            that.appendToLog('Durationchange event fired, now '+that.getDuration().toString(), true);
+            that.appendToLog('Durationchange event fired, now ' + that.getDuration().toString(), true);
             that.setDuration(that.getPlayer().duration);
         });
 
         this.getPlayer().addEventListener('timeupdate', function () {
-            that.appendToLog('Timeupdate, current is '+that.getCurrentTime().toString());
+            that.appendToLog('Timeupdate, current is ' + that.getCurrentTime().toString());
             that.setCurrentTime(that.getPlayer().currentTime);
             that.setCurrentPercentage(parseInt((Math.floor(that.getCurrentTime()) / Math.floor(that.getDuration()) * 100).toFixed(0), 10));
         });

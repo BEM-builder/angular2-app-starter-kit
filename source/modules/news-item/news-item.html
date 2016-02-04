@@ -1,0 +1,8 @@
+<div class="news__item" [ngClass]="modificator">
+    <div class="news__img" [ngClass]="imgClass"></div>
+    <h3>{{title}}</h3>
+    <div class="news__item-text">
+        {{text}}
+    </div>
+    <a *ngIf="url.length > 0" class="btn btn_primary" href="{{url}}" role="button">Подробнее »</a>
+</div>

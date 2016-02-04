@@ -84,7 +84,7 @@ export class SecondPageComponent {
     }
 
     onSecondFormSubmit() {
-        var selectable : any = document.getElementById('selectable');
+        let selectable : any = document.getElementById('selectable');
         this.secondFormData = selectable[selectable.selectedIndex].text;
     }
 

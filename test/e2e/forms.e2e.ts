@@ -3,7 +3,7 @@ import 'reflect-metadata'
 import {SecondPageComponent} from '../../source/app/pages/secondpage/secondpage.component';
 
 describe('Forms page', function () {
-    var formsObject = new FormsPageObject();
+    let formsObject = new FormsPageObject();
 
     beforeEach(function () {
         browser.get('#/secondpage');

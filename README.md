@@ -35,40 +35,40 @@ npm start
 ```
 bem-builder-angular/
  ├──public/ 
- |   └──index.html
- ├──source/                          * source         
+ |   └──index.html                            * индексный html-файл
+ ├──source/                                   * папка с исходниками         
  |   ├──app
- │   │   ├──pages                
+ │   │   ├──pages                             * страницы 
  │   │   │   ├──home
- │   │   │   │   ├──home.ts
- │   │   │   │   ├──home.html
- │   │   │   │   └──home.scss
+ │   │   │   │   ├──home.ts                   * компонент сраницы
+ │   │   │   │   ├──home.html                 * шаблон страницы
+ │   │   │   │   └──home.scss                 * стили страницы
  │   │   │   └──...
- │   │   └──app.ts
+ │   │   └──app.ts                            * основной файл приложения
  │   │
- |   ├──build    
- │   │   ├──sass
- │   │   │   ├──build.scss
- │   │   │   └──retina.scss
- │   │   ├──main.ts
- │   │   └──vendor.ts
+ |   ├──build                                 * папка с настойками сборки
+ │   │   ├──sass  
+ │   │   │   ├──build.scss                    * настройка сборки sass
+ │   │   │   └──retina.scss                   * стили для ретина-экранов
+ │   │   ├──main.ts                           * настройка сборки main.js
+ │   │   └──vendor.ts                         * настройка сборки vendor.js
  │   │
- |   └──modules 
+ |   └──modules                               * папка с модулями
  │       ├──player
- │       │   ├──pipes
- │       │   ├──player.ts
- │       │   ├──player.html
- │       │   └──player.scss
+ │       │   ├──pipes                         * pipes для модуля
+ │       │   ├──player.ts                     * описание моудля в typescript
+ │       │   ├──player.html                   * шаблон модуля
+ │       │   └──player.scss                   * стили модуля
  │       └──...
  │
- ├──test/                      
+ ├──test/                                     * тесты
  │
- ├──tsconfig.json              
- ├──typings.json               
- ├──package.json               
+ ├──tsconfig.json                             * настройки typescript
+ ├──typings.json                              * описание typings
+ ├──package.json                              * описание окружения для npm i
  │
- ├──webpack.config.js          * webpack config
- └──webpack.test.config.js     * our production webpack config
+ ├──webpack.config.js                         * конфигурация сборки webpack
+ └──webpack.test.config.js                    * конфигурация webpack для тестов
 ```
 
 ## Полезные ссылки

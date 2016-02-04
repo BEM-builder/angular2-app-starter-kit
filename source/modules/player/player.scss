@@ -1,0 +1,45 @@
+.player {
+  &:after {
+    clear: both;
+    display: block;
+    content: ""
+  }
+  &__video {
+    width: 650px;
+    float: left;
+    position: relative;
+    video {
+      width:650px;
+      height:370px;
+      background:#000;
+    }
+  }
+  &__log {
+    width:250px;
+    float: right;
+    height:370px;
+    overflow-x:hidden;
+    overflow-y:auto;
+  }
+  &__controls {
+    z-index: 999;
+    position: absolute;
+    top: 329px;
+    left:7px;
+    right:7px;
+  }
+  &__time {
+    float:right;
+    padding-right:210px;
+    color:#fff;
+    height: 34px;
+    line-height: 34px;
+  }
+  &__control {
+    float:left;
+    outline:none;
+    &_full {
+      float:right;
+    }
+  }
+}

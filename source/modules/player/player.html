@@ -1,18 +1,20 @@
-<div class="playerContainer">
-    <video id="player" src="http://1cdp.look1.ru/trailer/e9350309-194b-4e0d-b967-ccd4647baeb4.mp4" volume="0.3" width="800" height="450"></video>
-    <div class="controls">
-        <button id="playpause" class="control btn btn-success" (click)="playbackToggle()">
-            Play
-        </button>
-        <div id="progressbar">
-            <div id="progressindicator" [style.width.%]="getCurrentPercentage()"></div>
+<h2>Test player</h2>
+<div class="player">
+    <div class="player__video">
+        <video id="player" src="http://1cdp.look1.ru/trailer/e9350309-194b-4e0d-b967-ccd4647baeb4.mp4" volume="0.3" width="650" height="370"></video>
+        <div class="player__controls">
+            <button id="playpause" class="player__control btn btn_success" (click)="playbackToggle()">Play</button>
+            <div id="progressbar">
+                <div id="progressindicator" [style.width.%]="getCurrentPercentage()"></div>
+            </div>
+            <button id="fullscreen" class="player__control player__control_full btn btn_success" (click)="requestFullScreen()">Full</button>
+            <div class="player__time">
+                <span id="currentTime">{{getCurrentTime() | convertToFullTime}}</span>
+                <span class="divider"> / </span>
+                <span id="durationTime">{{getDuration() | convertToFullTime}}</span>
+            </div>
         </div>
-        <button id="fullscreen" class="control btn btn-success" (click)="requestFullScreen()">
-            Full
-        </button>
-        <span id="durationTime">{{getDuration() | convertToFullTime}}</span>
-        <span class="divider"> / </span>
-        <span id="currentTime">{{getCurrentTime() | convertToFullTime}}</span>
     </div>
+    <div id="log" class="player__log" (click)="stopScrolling()">Click to stop scrolling!<br/></div>
 </div>
-<div id="log" class="playerlog" (click)="stopScrolling()">Click to stop scrolling!<br/></div>
+

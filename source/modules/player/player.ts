@@ -1,11 +1,12 @@
 import {Component, AfterViewInit} from 'angular2/core'
 import {Router, RouteConfig, RouterLink, ROUTER_DIRECTIVES} from 'angular2/router';
-import {Conversion} from './../../pipes/timepipe/timepipe.pipe'
+import {Conversion} from './pipes/timepipe/timepipe.pipe'
 
 @Component({
     selector: 'player',
     pipes: [Conversion],
     template: require('./player.html'),
+    styles: [ require('./player.scss').toString()],
     directives: [Player]
 })
 

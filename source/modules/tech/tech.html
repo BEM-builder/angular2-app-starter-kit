@@ -1,0 +1,14 @@
+<div class="news {{modificator}}">
+    <div class="page-header">
+        <h2>{{data.tech.title}}</h2>
+    </div>
+    <div class="news__items">
+        <news-item *ngFor="#item of data.tech.items"
+            modificator=""
+            imgClass="{{item.imgClass}}"
+            title="{{item.name}}"
+            text="{{item.text}}"
+            url="{{item.url}}" >
+        </news-item>
+    </div>
+</div>

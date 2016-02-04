@@ -1,6 +1,7 @@
 import {Component, provide} from 'angular2/core';
 
 import {Header} from './../modules/header/header';
+import {Footer} from './../modules/footer/footer';
 
 import {HomeComponent} from './pages/homepage/homepage.component';
 import {SecondPageComponent} from './pages/secondpage/secondpage.component';
@@ -18,12 +19,13 @@ import {
   selector: 'app',
   template: `
     <div>
-        <header></header>
+      <header></header>
       <router-outlet></router-outlet>
+      <footer></footer>
     </div>
   `,
   styles: [ ".router-link-active {background-color: red;}"],
-  directives: [ROUTER_DIRECTIVES, Header]
+  directives: [ROUTER_DIRECTIVES, Header, Footer]
 })
 
 @RouteConfig([

@@ -15,14 +15,32 @@ if [[ $1 == "page" ]]; then
         echo -en "'\n\n"
 
     else
-        mkdir source/app/pages/$2
-        cp source/build/page/* source/app/pages/$2
-        mv source/app/pages/$2/page.ts source/app/pages/$2/$2.ts
-        mv source/app/pages/$2/page.html source/app/pages/$2/$2.html
-        echo -en "\n${GREEN}Page '$2' created...\n"
-        echo -en "${GREEN}File '$2/$2.ts' created\n"
-        echo -en "${GREEN}File '$2/$2.html' created\n\n"
-        tput sgr0
+        if ! [ -d source/app/pages/$2/ ];then
+            mkdir source/app/pages/$2
+            echo -en "\n${GREEN}Page '$2' created..."
+            tput sgr0
+        else
+            echo -en "\n${YELLOW}Page '$2' already exist"
+            tput sgr0
+        fi
+        if ! [ -f source/app/pages/$2/$2.ts ];then
+            cp source/build/page/page.ts source/app/pages/$2
+            mv source/app/pages/$2/page.ts source/app/pages/$2/$2.ts
+            echo -en "\n${GREEN}File '$2/$2.ts' created"
+            tput sgr0
+        else
+            echo -en "\n${YELLOW}File '$2/$2.ts' already exist"
+            tput sgr0
+        fi
+        if ! [ -f source/app/pages/$2/$2.html ];then
+            cp source/build/page/page.html source/app/pages/$2
+            mv source/app/pages/$2/page.html source/app/pages/$2/$2.html
+            echo -en "\n${GREEN}File '$2/$2.html' created\n\n"
+            tput sgr0
+        else
+            echo -en "\n${YELLOW}File '$2/$2.html' already exist\n\n"
+            tput sgr0
+        fi
     fi
 elif [[ $1 == "module" ]]; then
     if [ -z $2 ] ; then
@@ -34,20 +52,45 @@ elif [[ $1 == "module" ]]; then
                 tput sgr0
                 echo -en "'\n\n"
     else
-        mkdir source/modules/$2
-        cp source/build/module/* source/modules/$2
-        mv source/modules/$2/default.ts source/modules/$2/$2.ts
-        mv source/modules/$2/default.html source/modules/$2/$2.html
-        mv source/modules/$2/default.scss source/modules/$2/$2.scss
-        echo -en "\n${GREEN}Module '$2' created...\n"
-        echo -en "${GREEN}File '$2/$2.ts' created\n"
-        echo -en "${GREEN}File '$2/$2.html' created\n"
-        echo -en "${GREEN}File '$2/$2.scss' created\n\n"
-        tput sgr0
+        if ! [ -d source/modules/$2/ ];then
+            mkdir source/modules/$2
+            echo -en "\n${GREEN}Module '$2' created..."
+            tput sgr0
+        else
+            echo -en "\n${YELLOW}Module '$2' already exist"
+            tput sgr0
+        fi
+        if ! [ -f source/modules/$2/$2.ts ];then
+            cp source/build/module/default.ts source/modules/$2
+            mv source/modules/$2/default.ts source/modules/$2/$2.ts
+            echo -en "\n${GREEN}File '$2/$2.ts' created"
+            tput sgr0
+        else
+            echo -en "\n${YELLOW}File '$2/$2.ts' already exist"
+            tput sgr0
+        fi
+        if ! [ -f source/modules/$2/$2.html ];then
+            cp source/build/module/default.html source/modules/$2
+            mv source/modules/$2/default.html source/modules/$2/$2.html
+            echo -en "\n${GREEN}File '$2/$2.html' created"
+            tput sgr0
+        else
+            echo -en "\n${YELLOW}File '$2/$2.html' already exist"
+            tput sgr0
+        fi
+        if ! [ -f source/modules/$2/$2.scss ];then
+            cp source/build/module/default.scss source/modules/$2
+            mv source/modules/$2/default.scss source/modules/$2/$2.scss
+            echo -en "\n${GREEN}File '$2/$2.scss' created\n\n"
+            tput sgr0
+        else
+            echo -en "\n${YELLOW}File '$2/$2.scss' already exist\n\n"
+            tput sgr0
+        fi
     fi
 else
     if [ -z $1 ] ; then
-        echo -en "-------------------------------------------------"
+        echo -en ""
     else
         echo -en "\n${RED}error: "
         tput sgr0

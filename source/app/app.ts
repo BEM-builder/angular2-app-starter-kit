@@ -33,11 +33,11 @@ import {
   {path: '/', name: 'HomePage', component: HomeComponent, useAsDefault: true},
   {path: '/modal', name: 'Modal', component: Modal},
   {
-    path: '/firstpage',
+    path: '/player',
     loader: () => require('./pages/firstpage/firstpage.async')('FirstPageComponent'),
-    name: 'FirstPage'
+    name: 'Player'
   },
-  {path: '/secondpage', name: 'SecondPage', component: SecondPageComponent}
+  {path: '/forms', name: 'Forms', component: SecondPageComponent}
 ])
 
 export class AppComponent {

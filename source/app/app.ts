@@ -4,8 +4,8 @@ import {Header} from './../modules/header/header';
 import {Footer} from './../modules/footer/footer';
 import {Modal} from './../modules/modal/modal';
 
-import {HomeComponent} from './pages/homepage/homepage.component';
-import {SecondPageComponent} from './pages/secondpage/secondpage.component';
+import {HomeComponent} from './pages/homepage/homepage';
+import {SecondPageComponent} from './pages/secondpage/secondpage';
 
 import {
     Router,
@@ -34,7 +34,7 @@ import {
   {path: '/modal', name: 'Modal', component: Modal},
   {
     path: '/firstpage',
-    loader: () => require('./pages/firstpage/firstpage.component.async')('FirstPageComponent'),
+    loader: () => require('./pages/firstpage/firstpage.async')('FirstPageComponent'),
     name: 'FirstPage'
   },
   {path: '/secondpage', name: 'SecondPage', component: SecondPageComponent}

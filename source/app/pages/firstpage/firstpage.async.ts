@@ -3,7 +3,7 @@ import {Player} from './../../../modules/player/player';
 
 @Component({
     selector: 'firstpage',
-    template: require('./firstpage.template.html'),
+    template: require('./firstpage.html'),
     directives: [Player]
 })
 

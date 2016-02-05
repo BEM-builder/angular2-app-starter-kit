@@ -1,8 +1,19 @@
 #!/bin/bash
 
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+
 if [[ $1 == "page" ]]; then
     if [ -z $2 ] ; then
-        echo «Do not set your parameter.»
+        echo -en "\n${RED}error:"
+        tput sgr0
+        echo -en " enter the ${YELLOW}name"
+        tput sgr0
+        echo -en " of page - './add page ${YELLOW}[value]"
+        tput sgr0
+        echo -en "'\n\n"
+
     else
         mkdir source/app/pages/$2
         cp source/build/page/* source/app/pages/$2
@@ -11,7 +22,13 @@ if [[ $1 == "page" ]]; then
     fi
 elif [[ $1 == "module" ]]; then
     if [ -z $2 ] ; then
-        echo «Do not set your parameter.»
+        echo -en "\n${RED}error:"
+                tput sgr0
+                echo -en " enter the ${YELLOW}name"
+                tput sgr0
+                echo -en " of module - './add module ${YELLOW}[value]"
+                tput sgr0
+                echo -en "'\n\n"
     else
         mkdir source/modules/$2
         cp source/build/module/* source/modules/$2
@@ -20,5 +37,19 @@ elif [[ $1 == "module" ]]; then
         mv source/modules/$2/default.scss source/modules/$2/$2.scss
     fi
 else
-    echo "Fail $1"
+    if [ -z $1 ] ; then
+        echo -en "-------------------------------------------------"
+    else
+        echo -en "\n${RED}error: "
+        tput sgr0
+        echo "'$1' is not a add command"
+    fi
+    echo -en "\nusage: ./add [command] [value]\n\n"
+    echo -en "commands:\n"
+    echo -en "   page          Create pages in source/app/pages\n"
+    echo -en "   module        Create module in source/modules\n\n"
+    echo -en "value:           Enter the name of page or module\n\n"
+    echo -en "example:         '${YELLOW}./add module search'\n\n"
+    echo -en ""
+    tput sgr0
 fi

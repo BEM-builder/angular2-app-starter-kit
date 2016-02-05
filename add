@@ -19,6 +19,10 @@ if [[ $1 == "page" ]]; then
         cp source/build/page/* source/app/pages/$2
         mv source/app/pages/$2/page.ts source/app/pages/$2/$2.ts
         mv source/app/pages/$2/page.html source/app/pages/$2/$2.html
+        echo -en "\n${GREEN}Page '$2' created...\n"
+        echo -en "${GREEN}File '$2/$2.ts' created\n"
+        echo -en "${GREEN}File '$2/$2.html' created\n\n"
+        tput sgr0
     fi
 elif [[ $1 == "module" ]]; then
     if [ -z $2 ] ; then
@@ -35,6 +39,11 @@ elif [[ $1 == "module" ]]; then
         mv source/modules/$2/default.ts source/modules/$2/$2.ts
         mv source/modules/$2/default.html source/modules/$2/$2.html
         mv source/modules/$2/default.scss source/modules/$2/$2.scss
+        echo -en "\n${GREEN}Module '$2' created...\n"
+        echo -en "${GREEN}File '$2/$2.ts' created\n"
+        echo -en "${GREEN}File '$2/$2.html' created\n"
+        echo -en "${GREEN}File '$2/$2.scss' created\n\n"
+        tput sgr0
     fi
 else
     if [ -z $1 ] ; then

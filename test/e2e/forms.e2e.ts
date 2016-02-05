@@ -1,6 +1,6 @@
 import {FormsPageObject} from './pageObjects/forms.pageObject'
 import 'reflect-metadata'
-import {SecondPageComponent} from '../../source/app/pages/secondpage/secondpage.component';
+import {SecondPageComponent} from '../../source/app/pages/secondpage/secondpage';
 
 describe('Forms page', function () {
     let formsObject = new FormsPageObject();

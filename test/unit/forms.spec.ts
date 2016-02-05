@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import {SecondPageComponent} from '../../source/app/pages/secondpage/secondpage.component';
+import {SecondPageComponent} from '../../source/app/pages/secondpage/secondpage';
 
 describe('forms unit testing', () => {
     var component = new SecondPageComponent();

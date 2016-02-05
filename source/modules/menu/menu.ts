@@ -5,7 +5,7 @@ import {Router, RouteConfig, RouterLink, ROUTER_DIRECTIVES} from 'angular2/route
 
 @Component({
     selector: 'menu',
-    template: require('./menu.template.html'),
+    template: require('./menu.html'),
     styles: [ require('./menu.scss').toString()],
     directives: [RouterLink, ROUTER_DIRECTIVES]
     //providers: [Data]

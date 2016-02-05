@@ -1,23 +1,24 @@
 #!/bin/bash
 
-mkdir source/blocks/$1;
-
-for i in ${@:2}
-do
-    mkdir source/blocks/$1;
-    if [ $i == "js" ] || [ $i == "less" ];then
-        touch source/blocks/$1/$1.$i
+if [[ $1 == "page" ]]; then
+    if [ -z $2 ] ; then
+        echo «Do not set your parameter.»
+    else
+        mkdir source/app/pages/$2
+        cp source/build/page/* source/app/pages/$2
+        mv source/app/pages/$2/page.ts source/app/pages/$2/$2.ts
+        mv source/app/pages/$2/page.html source/app/pages/$2/$2.html
     fi
-done
-
-if [ !$2 ];then
-    for i in js less
-    do
-        mkdir source/blocks/$1
-        if [ $i != "img" ];then
-            touch source/blocks/$1/$1.$i
-        fi
-    done
+elif [[ $1 == "module" ]]; then
+    if [ -z $2 ] ; then
+        echo «Do not set your parameter.»
+    else
+        mkdir source/modules/$2
+        cp source/build/module/* source/modules/$2
+        mv source/modules/$2/default.ts source/modules/$2/$2.ts
+        mv source/modules/$2/default.html source/modules/$2/$2.html
+        mv source/modules/$2/default.scss source/modules/$2/$2.scss
+    fi
+else
+    echo "Fail $1"
 fi
-
-gulp

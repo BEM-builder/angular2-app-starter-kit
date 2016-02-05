@@ -14,8 +14,8 @@ import {Router, RouteConfig, RouterLink, ROUTER_DIRECTIVES} from 'angular2/route
 export class Menu {
     @Input() modificator : string;
     private routeNames : Array<string> = [
-        'FirstPage',
-        'SecondPage',
+        'Player',
+        'Forms',
         'HomePage'
     ];
     private data : any = new Data().getData();

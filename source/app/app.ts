@@ -2,6 +2,7 @@ import {Component, provide} from 'angular2/core';
 
 import {Header} from './../modules/header/header';
 import {Footer} from './../modules/footer/footer';
+import {Modal} from './../modules/modal/modal';
 
 import {HomeComponent} from './pages/homepage/homepage.component';
 import {SecondPageComponent} from './pages/secondpage/secondpage.component';
@@ -30,7 +31,7 @@ import {
 
 @RouteConfig([
   {path: '/', name: 'HomePage', component: HomeComponent, useAsDefault: true},
-  //{path: '/firstpage', name: 'FirstPage', component: FirstPageComponent},
+  {path: '/modal', name: 'Modal', component: Modal},
   {
     path: '/firstpage',
     loader: () => require('./pages/firstpage/firstpage.component.async')('FirstPageComponent'),

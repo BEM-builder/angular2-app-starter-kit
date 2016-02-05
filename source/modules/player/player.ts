@@ -6,8 +6,7 @@ import {Conversion} from './pipes/timepipe/timepipe.pipe';
     selector: 'player',
     pipes: [Conversion],
     template: require('./player.html'),
-    styles: [ require('./player.scss').toString()],
-    directives: [Player]
+    styles: [ require('./player.scss').toString()]
 })
 
 export class Player {

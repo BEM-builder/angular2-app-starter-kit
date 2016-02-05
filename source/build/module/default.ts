@@ -4,8 +4,7 @@ import {Router, RouteConfig, RouterLink, ROUTER_DIRECTIVES} from 'angular2/route
 @Component({
     selector: 'default',
     template: require('./default.html'),
-    styles: [ require('./default.scss').toString()],
-    directives: [Player]
+    styles: [ require('./default.scss').toString()]
 })
 
 export class Default {

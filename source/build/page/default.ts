@@ -2,8 +2,8 @@ import {Component} from 'angular2/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({
-    selector: 'page',
-    template: require('./page.html'),
+    selector: 'default',
+    template: require('./default.html'),
     directives: [ROUTER_DIRECTIVES]
 })
 

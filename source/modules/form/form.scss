@@ -1,0 +1,24 @@
+.form {
+  &:after {
+    clear:both;
+    display:block;
+    content: ""
+  }
+  &_first,
+  &_second {
+    float: left;
+    width:300px;
+  }
+  label {
+    display: block;
+    margin-bottom: 2px;
+  }
+  .input,
+  .form-control{
+    width: 200px;
+  }
+}
+.form_log {
+  float:right;
+  width:300px;
+}

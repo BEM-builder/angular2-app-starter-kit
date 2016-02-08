@@ -4,7 +4,7 @@ describe('Player page', function () {
     let playerObject = new PlayerPageObject();
 
     beforeEach(function () {
-        browser.get('#/firstpage');
+        browser.get('#/player');
     });
 
     it('should test player', () => {

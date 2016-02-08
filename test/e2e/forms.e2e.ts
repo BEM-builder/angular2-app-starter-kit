@@ -6,7 +6,7 @@ describe('Forms page', function () {
     let formsObject = new FormsPageObject();
 
     beforeEach(function () {
-        browser.get('#/secondpage');
+        browser.get('#/forms');
     });
 
     it('should make sure that first form is present', () => {

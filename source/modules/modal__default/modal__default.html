@@ -1,11 +1,10 @@
 <div class="modal" [ngStyle]="modificator">
     <div class="modal__dialog">
         <div class="modal__header">
-            <span class="modal__close">×</span>
-            <h4 class="modal__title">Title</h4></div>
+            <span class="modal__close" (click)="onClose()">×</span>
+            <h4 class="modal__title">Заголовок</h4></div>
         <div class="modal__body">
-            Body
-            <login></login>
+            Текст
         </div>
     </div>
 </div>

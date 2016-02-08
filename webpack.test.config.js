@@ -7,7 +7,19 @@ var path = require('path');
 // Webpack Plugins
 var ProvidePlugin = require('webpack/lib/ProvidePlugin');
 var DefinePlugin  = require('webpack/lib/DefinePlugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var ENV = process.env.ENV = process.env.NODE_ENV = 'test';
+
+var settings = {
+  app: { 'vendor': './build/vendor.ts', 'main': './build/main.ts' },
+  context: '/source',
+  path: '/public',
+  bundleApp: '/js/[name].js',
+  bundleCSS: 'css/styles.css',
+  chunks: 'js/chunks/[name].js',
+  contentBase: "./public",
+  port: 3000
+};
 
 /*
  * Config
@@ -40,6 +52,12 @@ module.exports = {
         test: /\.async\.ts$/,
         loaders: ['es6-promise-loader', 'ts-loader'],
         exclude: [ /\.(spec|e2e)\.ts$/ ]
+      },
+      {
+        test:   /\.(sass|scss)$/,
+        loader: ExtractTextPlugin.extract(
+            'css?sourceMap!autoprefixer?browsers=last 15 versions!sass?sourceMap'
+        )
       },
       {
         test: /\.ts$/,
@@ -91,7 +109,8 @@ module.exports = {
       '__extends': 'ts-helper/extends',
       '__param': 'ts-helper/param',
       'Reflect': 'es7-reflect-metadata/src/global/browser'
-    })
+    }),
+    new ExtractTextPlugin(settings.bundleCSS)
   ],
   // we need this due to problems with es6-shim
   node: {

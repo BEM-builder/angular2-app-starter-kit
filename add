@@ -4,6 +4,8 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 
+export=$(echo $2 | gsed 's/[a-z]*/\u&/g');
+
 if [[ $1 == "page" ]]; then
     if [ -z $2 ] ; then
         echo -en "\n${RED}error:"
@@ -27,6 +29,7 @@ if [[ $1 == "page" ]]; then
             cp source/build/page/default.ts source/app/pages/$2
             mv source/app/pages/$2/default.ts source/app/pages/$2/$2.ts
             sed -i '' "s/default/$2/" source/app/pages/$2/$2.ts
+            sed -i '' "s/Default/$export/" source/app/pages/$2/$2.ts
             echo -en "\n${GREEN}File '$2/$2.ts' created"
             tput sgr0
         else
@@ -66,6 +69,7 @@ elif [[ $1 == "module" ]]; then
             cp source/build/module/default.ts source/modules/$2
             mv source/modules/$2/default.ts source/modules/$2/$2.ts
             sed -i '' "s/default/$2/" source/modules/$2/$2.ts
+            sed -i '' "s/Default/$export/" source/modules/$2/$2.ts
             echo -en "\n${GREEN}File '$2/$2.ts' created"
             tput sgr0
         else

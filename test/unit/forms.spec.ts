@@ -1,8 +1,8 @@
 import 'reflect-metadata';
-import {SecondPageComponent} from '../../source/app/pages/secondpage/secondpage';
+import {Form} from '../../source/modules/form/form';
 
 describe('forms unit testing', () => {
-    var component = new SecondPageComponent();
+    var component = new Form();
 
     beforeEach(() => {
         //browser.get('#/secondpage');

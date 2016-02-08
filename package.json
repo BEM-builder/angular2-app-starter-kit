@@ -1,7 +1,7 @@
 {
-  "name": "bem-builder",
-  "version": "3.0.0",
-  "description": "Module bundler",
+  "name": "bem-builder-angular",
+  "version": "1.0.0",
+  "description": "BEM + Webpack + Angular2",
   "scripts": {
     "webdriver:update": "webdriver-manager update",
     "webdriver:start": "webdriver-manager start",
@@ -18,18 +18,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/awibox/bem-builder.git"
+    "url": "git+https://github.com/awibox/bem-builder-angular.git"
   },
   "keywords": [
     "bem",
     "webpack"
   ],
-  "author": "Arkhipov Andrey",
+  "author": "Arkhipov Andrey, Dmitry Gortinsky",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/awibox/bem-builder/issues"
+    "url": "https://github.com/awibox/bem-builder-angular/issues"
   },
-  "homepage": "https://github.com/awibox/bem-builder#readme",
+  "homepage": "https://github.com/awibox/bem-builder-angular#readme",
   "devDependencies": {
     "arrify": "*",
     "bluebird": "*",

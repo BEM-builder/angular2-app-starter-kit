@@ -2,7 +2,6 @@ import {Component, provide} from 'angular2/core';
 
 import {Header} from './../modules/header/header';
 import {Footer} from './../modules/footer/footer';
-import {Modal} from './../modules/modal/modal';
 
 import {HomeComponent} from './pages/homepage/homepage';
 import {SecondPageComponent} from './pages/secondpage/secondpage';
@@ -31,7 +30,6 @@ import {
 
 @RouteConfig([
   {path: '/', name: 'HomePage', component: HomeComponent, useAsDefault: true},
-  {path: '/modal', name: 'Modal', component: Modal},
   {
     path: '/player',
     loader: () => require('./pages/firstpage/firstpage.async')('FirstPageComponent'),

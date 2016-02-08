@@ -45,17 +45,6 @@ module.exports = {
                 exclude: [ /\.(spec|e2e)\.ts$/ ]
             },
             {
-                test: /\.json$/,
-                loader: 'json-loader'
-            },
-            {
-                test: /\.css$/,
-                loader: 'raw-loader' },
-            {
-                test: /\.html$/,
-                loader: 'raw-loader'
-            },
-            {
                 test:   /\.(sass|scss)$/,
                 loader: ExtractTextPlugin.extract(
                     'css?sourceMap!autoprefixer?browsers=last 15 versions!sass?sourceMap'
@@ -75,11 +64,6 @@ module.exports = {
         new webpack.optimize.OccurenceOrderPlugin(true),
         new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: settings.bundleApp, minChunks: Infinity }),
         new ExtractTextPlugin(settings.bundleCSS),
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.jQuery': 'jquery'
-        })
     ],
     tslint: {
         emitErrors: false,

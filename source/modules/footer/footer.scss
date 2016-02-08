@@ -1,8 +1,10 @@
 .footer {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-top: 20px;
-  border-top: 1px solid #eee;
+  margin-top: 50px;
+  .wrapper {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
   &__copyright {
     float: left;
   }

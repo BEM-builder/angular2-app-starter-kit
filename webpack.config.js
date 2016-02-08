@@ -45,6 +45,10 @@ module.exports = {
                 exclude: [ /\.(spec|e2e)\.ts$/ ]
             },
             {
+                test: /\.html$/,
+                loader: 'raw-loader'
+            },
+            {
                 test:   /\.(sass|scss)$/,
                 loader: ExtractTextPlugin.extract(
                     'css?sourceMap!autoprefixer?browsers=last 15 versions!sass?sourceMap'
@@ -63,7 +67,7 @@ module.exports = {
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(true),
         new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: settings.bundleApp, minChunks: Infinity }),
-        new ExtractTextPlugin(settings.bundleCSS),
+        new ExtractTextPlugin(settings.bundleCSS)
     ],
     tslint: {
         emitErrors: false,

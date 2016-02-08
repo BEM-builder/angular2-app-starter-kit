@@ -4,6 +4,8 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 
+export=$(echo $2 | gsed 's/[a-z]*/\u&/g');
+
 if [[ $1 == "page" ]]; then
     if [ -z $2 ] ; then
         echo -en "\n${RED}error:"
@@ -24,8 +26,10 @@ if [[ $1 == "page" ]]; then
             tput sgr0
         fi
         if ! [ -f source/app/pages/$2/$2.ts ];then
-            cp source/build/page/page.ts source/app/pages/$2
-            mv source/app/pages/$2/page.ts source/app/pages/$2/$2.ts
+            cp source/build/page/default.ts source/app/pages/$2
+            mv source/app/pages/$2/default.ts source/app/pages/$2/$2.ts
+            sed -i '' "s/default/$2/" source/app/pages/$2/$2.ts
+            sed -i '' "s/Default/$export/" source/app/pages/$2/$2.ts
             echo -en "\n${GREEN}File '$2/$2.ts' created"
             tput sgr0
         else
@@ -33,8 +37,9 @@ if [[ $1 == "page" ]]; then
             tput sgr0
         fi
         if ! [ -f source/app/pages/$2/$2.html ];then
-            cp source/build/page/page.html source/app/pages/$2
-            mv source/app/pages/$2/page.html source/app/pages/$2/$2.html
+            cp source/build/page/default.html source/app/pages/$2
+            mv source/app/pages/$2/default.html source/app/pages/$2/$2.html
+            sed -i '' "s/default/$2/" source/app/pages/$2/$2.html
             echo -en "\n${GREEN}File '$2/$2.html' created\n\n"
             tput sgr0
         else
@@ -63,6 +68,8 @@ elif [[ $1 == "module" ]]; then
         if ! [ -f source/modules/$2/$2.ts ];then
             cp source/build/module/default.ts source/modules/$2
             mv source/modules/$2/default.ts source/modules/$2/$2.ts
+            sed -i '' "s/default/$2/" source/modules/$2/$2.ts
+            sed -i '' "s/Default/$export/" source/modules/$2/$2.ts
             echo -en "\n${GREEN}File '$2/$2.ts' created"
             tput sgr0
         else
@@ -72,6 +79,7 @@ elif [[ $1 == "module" ]]; then
         if ! [ -f source/modules/$2/$2.html ];then
             cp source/build/module/default.html source/modules/$2
             mv source/modules/$2/default.html source/modules/$2/$2.html
+            sed -i '' "s/default/$2/" source/modules/$2/$2.html
             echo -en "\n${GREEN}File '$2/$2.html' created"
             tput sgr0
         else
@@ -81,6 +89,7 @@ elif [[ $1 == "module" ]]; then
         if ! [ -f source/modules/$2/$2.scss ];then
             cp source/build/module/default.scss source/modules/$2
             mv source/modules/$2/default.scss source/modules/$2/$2.scss
+            sed -i '' "s/default/$2/" source/modules/$2/$2.scss
             echo -en "\n${GREEN}File '$2/$2.scss' created\n\n"
             tput sgr0
         else

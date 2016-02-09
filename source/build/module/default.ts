@@ -1,5 +1,4 @@
-import {Component, Input} from 'angular2/core';
-import {Router, RouteConfig, RouterLink, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component} from 'angular2/core';
 
 @Component({
     selector: 'default',

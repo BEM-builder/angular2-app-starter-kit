@@ -91,10 +91,3 @@ bem-builder-angular/
  ├──webpack.config.js                         * конфигурация сборки webpack
  └──webpack.test.config.js                    * конфигурация webpack для тестов
 ```
-
-## Полезные ссылки
-+ webpack - http://webpack.github.io/docs/
-+ babel - http://babeljs.io/docs/learn-es2015/
-+ handlebars - http://handlebarsjs.com/
-+ less - http://lesscss.org/
-+ ECMA Script 6 - http://habrahabr.ru/post/252323/
